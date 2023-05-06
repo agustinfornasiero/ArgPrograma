@@ -39,6 +39,8 @@ public class Persona {
         this.direccion = direccion;
     }
 
+    public Persona(){}
+
     //#region Getters and Setters
     public Long getId() {
         return id;
