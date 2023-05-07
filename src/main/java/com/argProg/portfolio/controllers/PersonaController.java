@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -47,4 +48,16 @@ public class PersonaController {
         
         return this.personaSvc.updatePersona(perDTO, id);
     }
+
+    //Delete a Persona
+    @DeleteMapping(path = ("/delete/{id}"))
+    public String deletePersona(@PathVariable Long id){
+        boolean ok = this.personaSvc.deletePersona(id);
+
+        if(ok){
+            return "Persona con id " + id + " fue borrado";
+        } else {
+            return "Error. No se pudo eliminar la persona con " + id;
+        }
+    }   
 }

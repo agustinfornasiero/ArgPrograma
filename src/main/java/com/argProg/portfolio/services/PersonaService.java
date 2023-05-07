@@ -44,6 +44,15 @@ public class PersonaService {
 
         _personaRepository.save(per);
         return per;
+    }
 
+    //Delete a Persona
+    public Boolean deletePersona(Long id){
+        try{
+            _personaRepository.deleteById(id);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
     }
 }
