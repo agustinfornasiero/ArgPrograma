@@ -54,9 +54,9 @@ public class HabilidadesController {
         boolean ok = this.habilidadesSvc.deleteHabilidad(id);
 
         if(ok){
-            return "Persona con id " + id + " fue borrado";
+            return "Las habilidades de la persona con id " + id + " fue borrado";
         } else {
-            return "Error. No se pudo eliminar la persona con " + id;
+            return "Error. No se pudieron eliminar las habilidades de la persona con " + id;
         }
     }   
 
